@@ -6,13 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "usuario")
-public class UsuarioModel {
+@Table(name = "colaborador")
+public class ColaboradorModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,14 +25,16 @@ public class UsuarioModel {
     @NotNull
     private String email;
     
-    @Column(name = "senha",nullable = false)
+    @Column(name = "funcao",nullable = false)
     @NotNull
-    @Size(min = 5, message = "A senha deve ter no mínimo 5 digitos!")
-    private String senha;
-
-    public UsuarioModel() {
-    }
+    private String funcao;
     
+    @Column(name = "nascimento",nullable = false)
+    private LocalDate nascimento;
+
+    public ColaboradorModel() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -58,12 +59,20 @@ public class UsuarioModel {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getFuncao() {
+        return funcao;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setFuncao(String funcao) {
+        this.funcao = funcao;
+    }
+
+    public LocalDate getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(LocalDate nascimento) {
+        this.nascimento = nascimento;
     }
     
     
