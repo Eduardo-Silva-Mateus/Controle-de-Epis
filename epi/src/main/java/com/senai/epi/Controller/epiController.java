@@ -1,7 +1,7 @@
 package com.senai.epi.Controller;
 
-import com.senai.epi.Dtos.ColaboradorDto;
-import com.senai.epi.Service.ColaboradorService;
+import com.senai.epi.Dtos.epiDto;
+import com.senai.epi.Service.epiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,23 +10,25 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ColaboradorController {
+@RequestMapping("/epi")
+public class epiController {
     
     @Autowired
-    ColaboradorService service;
+    epiService service;
     
     @PostMapping()
-    public String cadastrarUsuario(@ModelAttribute("usuario") ColaboradorDto cadastro){
+    public String cadastrarUsuario(@ModelAttribute("usuario") epiDto cadastro){
         
         boolean sucesso = service.cadastrarUsuario(cadastro);
         
         if (sucesso){
-            return "redirect:listacolaborado";
+            return "redirect:listarepi";
         }
 
-        return "redirect:cadastrarcolaborado?erro";        
+        return "redirect:cadastrarepi?erro";        
     }
     
     @DeleteMapping("/{id}")
@@ -43,13 +45,13 @@ public class ColaboradorController {
     }
     
      @PostMapping("/{id}")
-    public String atualizarContato(@ModelAttribute("colaborador") @PathVariable Long id, ColaboradorDto atualizar){
+    public String atualizarContato(@ModelAttribute("contato") @PathVariable Long id, epiDto atualizar){
         
         boolean sucesso = service.atualizarUsuario(id,atualizar);
         
         if(sucesso){
-            return "redirect:listarcolaborador";
+            return "redirect:listarepi";
         }
-        return "redirect:listarcolaborador?erro";
+        return "redirect:listarepi?erro";
     }
 }
