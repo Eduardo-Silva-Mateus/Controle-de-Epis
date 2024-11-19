@@ -49,11 +49,12 @@
                         <tr>Ações</tr>
                     </thead>
                     <tbody>
-                        <tr th:each="">
-                            <td th:text=""></td>
-                            <td th:text=""></td>
+                        <tr th:each="usuario : ${usuario}">
+                            <td th:text="${usuario.id}"></td>
+                            <td th:text="${usuario.nome}"></td>
+                            <td th:text="${usuario.email}"></td>
                             <td> 
-                                <a th:href="">Visualizar</a>
+                                <a th:href="/visualizarusuario">Visualizar</a>
                             </td>
                             <td>
                                 <a th:data-usuario-id="">Excluir</a>

@@ -1,14 +1,12 @@
 package com.senai.epi.Dtos;
 
-public class epiDto {
-
+public class tipoEpiDto {
+    
     private Long id;
     
     private String descricao;
-    
-    private String tipo;
 
-    public epiDto() {
+    public tipoEpiDto() {
     }
 
     public Long getId() {
@@ -25,14 +23,6 @@ public class epiDto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
     
     

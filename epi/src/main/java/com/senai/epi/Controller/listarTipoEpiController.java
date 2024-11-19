@@ -1,7 +1,6 @@
 package com.senai.epi.Controller;
 
-import com.senai.epi.Service.ColaboradorService;
-import com.senai.epi.Service.epiService;
+import com.senai.epi.Service.tipoEPIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,18 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping()
-public class listarEPIController {
+@RequestMapping("/listartipoepi")
+public class listarTipoEpiController {
     
     @Autowired
-    epiService service;
+    tipoEPIService service;
     
-    @GetMapping("/listarepi")
+    @GetMapping("/listartipoepi")
     public String exibirListaUsuarios(Model model){
                      
-        model.addAttribute("epi",service.obterListaUsuarios());
+        model.addAttribute("tipoepi",service.obterListaTipos());
         
         //--template : retorna o nome do arquivo html localizado lá na pasta templates.
-        return "listarepi";
+        return "listartipoepi";
     }
 }

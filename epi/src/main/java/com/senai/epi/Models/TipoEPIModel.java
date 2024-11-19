@@ -6,25 +6,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "epis")
-public class epiModel {
+@Table(name = "tipoEpi")
+public class TipoEPIModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(name = "descricao",nullable = false)
-    @NotNull
+    @Column(name = "descricao")
     private String descricao;
-    
-    @Column(name = "tipo",nullable = false)
-    @NotNull
-    private String tipo;
 
-    public epiModel() {
+    public TipoEPIModel() {
     }
 
     public Long getId() {
@@ -41,14 +35,6 @@ public class epiModel {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
     
     

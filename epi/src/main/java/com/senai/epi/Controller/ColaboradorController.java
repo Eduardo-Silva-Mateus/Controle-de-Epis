@@ -10,23 +10,25 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/colaborador")
 public class ColaboradorController {
     
     @Autowired
     ColaboradorService service;
     
     @PostMapping()
-    public String cadastrarUsuario(@ModelAttribute("usuario") ColaboradorDto cadastro){
+    public String cadastrarUsuario(@ModelAttribute("colaborador") ColaboradorDto cadastro){
         
         boolean sucesso = service.cadastrarUsuario(cadastro);
         
         if (sucesso){
-            return "redirect:listacolaborado";
+            return "redirect:listacolaborador";
         }
 
-        return "redirect:cadastrarcolaborado?erro";        
+        return "redirect:cadastrarcolaborador?erro";        
     }
     
     @DeleteMapping("/{id}")
