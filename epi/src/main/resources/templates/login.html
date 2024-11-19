@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="./styles/loginstyle.css">
+    <title>Login</title>
+</head>
+    <body>
+        <div class="div-pricipal">
+            <div >
+                <div>
+                    <div class="div-secundaria">
+                        <h5 class="text-login">Login</h5>
+                        <div class="div-informacoes">
+
+                            <form th:method="post" th:action="@{/login}" th:object="${loginDto}">
+
+                                <div>
+                                    <div>
+                                        <input type="email" id="email" name="email" th:field="*{email}" class="" />
+                                        <label for="login">E-mail</label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <input type="" id="senha" name="senha" th:field="*{senha}" class="form-control form-control-lg" />
+                                        <label for="">Senha</label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button type="submit">Entrar</button>
+                                </div>
+
+                            </form>
+
+                            <div th:if="${param.erro}" class="alert alert-danger" role="alert">                
+                                <span class="mensagem">Erro ao realizar login do usuário!</span>
+                            </div>
+
+                            <div th:if="${param.logout}" class="alert alert-info" role="alert">                
+                                <span class="mensagem">Logout realizado com sucesso!</span>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
