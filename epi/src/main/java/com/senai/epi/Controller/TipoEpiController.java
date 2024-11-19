@@ -1,7 +1,8 @@
 package com.senai.epi.Controller;
 
-import com.senai.epi.Dtos.ColaboradorDto;
-import com.senai.epi.Service.ColaboradorService;
+import com.senai.epi.Dtos.epiDto;
+import com.senai.epi.Dtos.tipoEpiDto;
+import com.senai.epi.Service.tipoEPIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,28 +14,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/colaborador")
-public class ColaboradorController {
+@RequestMapping("/tipoepi")
+public class TipoEpiController {
     
     @Autowired
-    ColaboradorService service;
+    tipoEPIService service;
     
     @PostMapping()
-    public String cadastrarUsuario(@ModelAttribute("colaborador") ColaboradorDto cadastro){
+    public String cadastrarTipoEpi(@ModelAttribute("usuario") epiDto cadastro){
         
-        boolean sucesso = service.cadastrarUsuario(cadastro);
+        boolean sucesso = service.cadastrarTipoEpi(cadastro);
         
         if (sucesso){
-            return "redirect:listacolaborador";
+            return "redirect:listartipoepi";
         }
 
-        return "redirect:cadastrarcolaborador?erro";        
+        return "redirect:cadastrartipoepi?erro";        
     }
     
     @DeleteMapping("/{id}")
     public ResponseEntity<String>  excluirUsuario(@PathVariable Long id){
     
-        boolean sucesso = service.excluirUsuario(id);
+        boolean sucesso = service.excluirTipoEpi(id);
         
         if (sucesso){
             return ResponseEntity.ok("Usuário excluído com sucesso.");
@@ -45,13 +46,13 @@ public class ColaboradorController {
     }
     
      @PostMapping("/{id}")
-    public String atualizarContato(@ModelAttribute("colaborador") @PathVariable Long id, ColaboradorDto atualizar){
+    public String atualizarContato(@ModelAttribute("contato") @PathVariable Long id, tipoEpiDto atualizar){
         
-        boolean sucesso = service.atualizarUsuario(id,atualizar);
+        boolean sucesso = service.atualizarTipoEpi(id,atualizar);
         
         if(sucesso){
-            return "redirect:listarcolaborador";
+            return "redirect:listartipoepi";
         }
-        return "redirect:listarcolaborador?erro";
+        return "redirect:listartipoepi?erro";
     }
 }
