@@ -1,0 +1,140 @@
+/* From Uiverse.io by Yaya12085 */ 
+.radio-inputs {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 800px;
+    font-size: 14px;
+  }
+  
+  .radio-inputs .radio {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: #fff;
+    font-weight: 600;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  .div__card{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  
+  .div_titulo{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+  
+  }
+  
+  .botao{
+    background-color: rgb(110, 110, 171);
+    text-decoration: none;
+    color: white;
+    padding: 5px 5px 5px 5px;
+    border: solid 2px #000000;
+    border-radius: 20px;
+    display: flex;
+    margin-top: 16px;
+  }
+  .botao:hover{
+    background-color: rgb(56, 56, 252);
+  }
+  
+  .div_tabela{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tabela{
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border-collapse: collapse;
+    width: 100px;
+    padding: 5px 5px 5px 5px;
+    border-bottom: solid 1px #000000; 
+  }
+  
+  th{
+    background-color: lightgray;
+  }
+  
+  .bnt_visualizar{
+    background-color: darkseagreen;
+    padding: 5px 8px 5px 8px;
+    border: solid 2px #000000;
+    border-radius: 15px;
+  }
+  
+  .bnt_visualizar:hover{
+    background-color: chartreuse;
+  }
+  
+  .bnt_atualizar{
+    background-color: lightblue;
+    padding: 5px 8px 5px 8px;
+    border: solid 2px #000000;
+    border-radius: 15px;
+  }
+  
+  .bnt_atualizar:hover{
+    background-color:lightseagreen ;
+  }
+  
+  .bnt_excluir{
+    background-color: lightcoral;
+    padding: 5px 8px 5px 8px;
+    border: solid 2px #000000;
+    border-radius: 15px;
+  }
+  
+  .bnt_excluir:hover{
+    background-color: crimson;
+  }

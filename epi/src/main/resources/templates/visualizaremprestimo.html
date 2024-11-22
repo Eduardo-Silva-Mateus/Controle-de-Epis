@@ -2,67 +2,78 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/cadastraremprestimostyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
     <body>
-        <!--Barra de Navegação-->
         <nav>
-            <a>Escolher Nome</a>
-            <div>
-                <ul>
-                    <li>
-                        <a href="home.html">Página Inicial</a>
-                    </li>
-                    <li>
-                        <a href="ListarUsuario.html">Cadastro de Usuário</a>
-                    </li>
-                    <li>
-                        <a href="ListarColaborador.html">Cadastro de Colaboradores</a>
-                    </li>
-                    <li>
-                        <a href="ListarEpis.html">Cadastro de EPI</a>
-                    </li>
-                    <li>
-                        <a href="ListarEmprestimo.html">Emprestimo de EPI</a>
-                    </li>
-                </ul>
-            </div>
-            <form>
-                <button>Sair</button>
-            </form>
+            <div class="radio-inputs">
+    
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/home">Home</a>
+                </label>
+    
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/listarusuario">Usuários</a>
+                </label>
+                    
+                <label class="radio">
+                  <input type="radio" name="radio">
+                  <a class="name" href="/listarcolaborador" checked="">Colaboradores</a>
+                </label>
+    
+                <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">Tipo EPI's</a>
+                  </label>
+    
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">EPI's</a>
+                  </label>
+    
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listaremprestimo">Emprestimo EPI's</a>
+                  </label>
+    
+              </div>
         </nav>
 
         <div>
             <div>
-                <div>
-                    <div>
+                <div class="div__principal">
+                    <div >
                         <div>
-                            Visualiza Usuario
+                            <h1>Visualizar Emprestimo</h1>
                         </div>
-                        <div>
-                            <form th:method="" th:action="" th:object="">
-                                <div>
-                                    <label for="">Id</label>
-                                    <input type="text" id="" th:fild="" class="" readonly>
+                        <div class="form">
+                            <form th:method="get" th:action="@{/empretimo}" th:object="${emprestimoDto}" class="info__form">
+                                <div class="info">
+                                    <label for="nome">Colaborador:</label>
+                                    <input placeholder="Nome" class="input" name="text" type="email" th:fild="*{colaborador}" required/>
                                 </div>
-                                <div>
-                                    <label for="">Colaborador</label>
-                                    <input type="text" id="" th:fild="" class="" readonly>
+                                <div class="info">
+                                    <label for="nome">Equipamento:</label>
+                                    <select th:fild="*{epi}" class="input" >
+                                        <option th:each=" i : ${#epi.equipamento}" th:value="${i}" th:text="${i}"></option>
+                                    </select>
                                 </div>
-                                <div>
-                                    <label for="">Equipamento</label>
-                                    <input type="text" id="" th:fild="" class="" readonly>
+                                <div class="info">
+                                    <label for="nome">Data do Emprestimo:</label>
+                                    <input placeholder="Data Emprestimo" class="input" name="text" type="date" th:fild="*{dataInicio}" required/>
                                 </div>
-                                <div>
-                                    <label for="">Data do Emprestimo</label>
-                                    <input type="date" id="" th:fild="" class="" readonly>
+                                <div class="info">
+                                    <label for="nome">Data da Devolução:</label>
+                                    <input placeholder="Data Devolução" class="input" name="text" type="date" th:fild="*{dataFim}" required/>
                                 </div>
-                                <div>
-                                    <label for="">Data da Devolução</label>
-                                    <input type="date" id="" th:fild="" class="" readonly>
+                                <div class="div__bnts">
+                                    <button th:href="" class="bnt__voltar">Voltar</button>
                                 </div>
-                            </form>   
+                            </form>
                         </div>
                     </div>
                 </div>

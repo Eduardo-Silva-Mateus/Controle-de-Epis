@@ -2,65 +2,87 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/listaremprestimostyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Emprestimo EPI's</title>
 </head>
     <body>
-        <!--Barra de Navegação-->
         <nav>
-            <a>Escolher Nome</a>
-            <div>
-                <ul>
-                    <li>
-                        <a href="home.html">Página Inicial</a>
-                    </li>
-                    <li>
-                        <a href="ListarUsuario.html">Cadastro de Usuário</a>
-                    </li>
-                    <li>
-                        <a href="ListarColaborador.html">Cadastro de Colaboradores</a>
-                    </li>
-                    <li>
-                        <a href="ListarEpis.html">Cadastro de EPI</a>
-                    </li>
-                    <li>
-                        <a href="ListarEmprestimo.html">Emprestimo de EPI</a>
-                    </li>
-                </ul>
-            </div>
-            <form>
-                <button>Sair</button>
-            </form>
+            <div class="radio-inputs">
+
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/home">Home</a>
+                </label>
+
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/listarusuario">Usuários</a>
+                </label>
+                    
+                <label class="radio">
+                  <input type="radio" name="radio">
+                  <a class="name" href="/listarcolaborador">Colaboradores</a>
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">Tipo EPI's</a>
+                  </label>
+
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">EPI's</a>
+                  </label>
+
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listaremprestimo" checked="">Emprestimo EPI's</a>
+                  </label>
+
+              </div>
         </nav>
 
-        <div>
-            <div>
-                <h6> Emprestimo de EPIS</h6>
+        <div class="div__card">
+            <div class="div_titulo">
+                <div>
+                    <h3> Emprestimo EPI's</h3>
+                </div>
+                <div class="div_button">
+                    <a th:href="cadastrarusuario.html" class="botao">Novo Emprestimo</a>
+                </div>
             </div>
-            <div>
-                <a>Cadastrar Novo Usuario</a>
-            </div>
-            <div>
-                <table>
-                    <thead>
-                        <tr>ID</tr>
-                        <tr>Nome</tr>
-                        <tr>E-mail</tr>
-                        <tr>Ações</tr>
+            <div class="div_tabela">
+                <table class="tabela">
+                    <thead class="tabela_cabecalho">
+                        <tr>
+                            <th class="s">ID</th>
+                            <th class="">Colaborador</th>
+                            <th class="">Equipamento</th>
+                            <th class="">Data</th>
+                            <th>Devolução</th>
+                            <th></th>
+                            <th class="">Ações</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="">
-                            <td th:text=""></td>
-                            <td th:text=""></td>
+                        <tr th:each="emprestimo : ${emprestimo}">
+                            <td th:text="${emprestimo.id}"></td>
+                            <td th:text="${emprestimo.colaborador}"></td>
+                            <td th:text="${emprestimo.equipamento}"></td>
+                            <td th:date="${emprestimo.dataInicio}"></td>
+                            <td th:date="${emprestimo.dataFim}"></td>
+                            <td> 
+                                <button th:href="@{'/visualizaremprestimo/'+ ${emprestimo.id}}" class="bnt_visualizar">Devolver</button>
+                            </td>
                             <td>
-                                <a th:data-empretimo-id="">Devolver</a>
+                               <button th:data-colaborador-id="${emprestimo.id}" class="bnt_excluir">Excluir</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
-        <scrip src=""></scrip>
+        <script src="/excluir_emprestimo.js">Excluir</script>
     </body>
 </html>

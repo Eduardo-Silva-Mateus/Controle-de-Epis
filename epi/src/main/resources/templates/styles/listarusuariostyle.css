@@ -13,7 +13,7 @@
   -webkit-box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
           box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
   padding: 0.25rem;
-  width: 300px;
+  width: 800px;
   font-size: 14px;
 }
 
@@ -57,17 +57,19 @@ a{
 }
 
 .div__card{
-  display: flex;
+  display: grid;
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .div_titulo{
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
-  justify-content: space-evenly;
+
 }
 
 .botao{
@@ -77,7 +79,8 @@ a{
   padding: 5px 5px 5px 5px;
   border: solid 2px #000000;
   border-radius: 20px;
-
+  display: flex;
+  margin-top: 16px;
 }
 .botao:hover{
   background-color: rgb(56, 56, 252);
