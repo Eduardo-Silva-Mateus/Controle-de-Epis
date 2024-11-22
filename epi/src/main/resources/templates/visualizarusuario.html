@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/cadastrarusuariostyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+    <body>
+        <nav>
+            <div class="radio-inputs">
+    
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/home">Home</a>
+                </label>
+    
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/listarusuario" checked="">Usuários</a>
+                </label>
+                    
+                <label class="radio">
+                  <input type="radio" name="radio">
+                  <a class="name" href="/listarcolaborador" >Colaboradores</a>
+                </label>
+    
+                <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">Tipo EPI's</a>
+                  </label>
+    
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">EPI's</a>
+                  </label>
+    
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listaremprestimo">Emprestimo EPI's</a>
+                  </label>
+    
+              </div>
+        </nav>
+
+        <div>
+            <div>
+                <div class="div__principal">
+                    <div >
+                        <div>
+                            <h1>Visualizar Usuario</h1>
+                        </div>
+                        <div class="form">
+                            <form th:method="post" th:action="@{/usuario}" th:object="${usuarioDto}" class="info__form">
+                                <div class="info">
+                                    <label for="nome">Nome:</label>
+                                    <input placeholder="Nome" class="input" name="text" type="text" th:fild="*{nome}" required/>
+                                </div>
+                                <div class="info">
+                                    <label for="nome">E-mail:</label>
+                                    <input placeholder="Email" class="input" name="text" type="email" th:fild="*{email}" required/>
+                                </div>
+                                <div class="info">
+                                    <label for="nome">Senha:</label>
+                                    <input placeholder="Senha" class="input" name="text" type="password" th:fild="*{senha}" required/>
+                                </div>
+                                <div class="div__bnts">
+                                    <button th:href="" class="bnt__voltar">Voltar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

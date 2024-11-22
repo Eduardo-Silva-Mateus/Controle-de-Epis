@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/listarepistyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPI's</title>
+</head>
+    <body>
+        <nav>
+            <div class="radio-inputs">
+
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/home">Home</a>
+                </label>
+
+                <label class="radio">
+                  <input type="radio" name="radio">
+                  <a class="name" href="/listarusuario">Usuários</a>
+                </label>
+                    
+                <label class="radio">
+                  <input type="radio" name="radio">
+                  <a class="name" href="/listarcolaborador">Colaboradores</a>
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi" >Tipo EPI's</a>
+                  </label>
+
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi" checked="">EPI's</a>
+                  </label>
+
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listaremprestimo">Emprestimo EPI's</a>
+                  </label>
+
+              </div>
+        </nav>
+
+        <div class="div__card">
+            <div class="div_titulo">
+                <div>
+                    <h3>EPI's</h3>
+                </div>
+                <div class="div_button">
+                    <a th:href="cadastrarusuario.html" class="botao">Cadastrar Epi</a>
+                </div>
+            </div>
+            <div class="div_tabela">
+                <table class="tabela">
+                    <thead class="tabela_cabecalho">
+                        <tr>
+                            <th class="">ID</th>
+                            <th class="">Tipo</th>
+                            <th class="">Descrição</th>
+                            <th></th>
+                            <th class="">Ações</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="epi : ${epi}">
+                            <td th:text="${epi.id}"></td>
+                            <td th:text="${epi.tipo}"></td>
+                            <td th:text="${epi.descricao}"></td>
+                            <td> 
+                                <button th:href="@{'/visualizarepi/'+ ${epi.id}}" class="bnt_visualizar">Visualizar</button>
+                            </td>
+                            <td>
+                                <button th:href="@{'/atualizarepi/'+ ${epi.id}}" class="bnt_atualizar">Atualizar</button>
+                            </td>
+                            <td>
+                               <button th:data-usuario-id="${epi.id}" class="bnt_excluir">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="/excluir_epi.js">Excluir</script>
+    </body>
+</html>

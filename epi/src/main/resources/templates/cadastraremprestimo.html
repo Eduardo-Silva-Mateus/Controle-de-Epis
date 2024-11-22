@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/cadastraremprestimostyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+    <body>
+        <nav>
+            <div class="radio-inputs">
+    
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/home">Home</a>
+                </label>
+    
+                <label class="radio">
+                  <input type="radio" name="radio" >
+                  <a class="name" href="/listarusuario">Usuários</a>
+                </label>
+                    
+                <label class="radio">
+                  <input type="radio" name="radio">
+                  <a class="name" href="/listarcolaborador" checked="">Colaboradores</a>
+                </label>
+    
+                <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">Tipo EPI's</a>
+                  </label>
+    
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listarepi">EPI's</a>
+                  </label>
+    
+                  <label class="radio">
+                    <input type="radio" name="radio">
+                    <a class="name" href="/listaremprestimo">Emprestimo EPI's</a>
+                  </label>
+    
+              </div>
+        </nav>
+
+        <div>
+            <div>
+                <div class="div__principal">
+                    <div >
+                        <div>
+                            <h1>Cadastrar Novo Emprestimo</h1>
+                        </div>
+                        <div class="form">
+                            <form th:method="post" th:action="@{/empretimo}" th:object="${emprestimoDto}" class="info__form">
+                                <div class="info">
+                                    <label for="nome">Colaborador:</label>
+                                    <input placeholder="Nome" class="input" name="text" type="email" th:fild="*(colaborador)" required/>
+                                </div>
+                                <div class="info">
+                                    <label for="nome">Equipamento:</label>
+                                    <select th:fild="*(epi)" class="input">
+                                        <option th:each=" i : ${#epi.equipamento}" th:value="${i}" th:text="${i}"></option>
+                                    </select>
+                                </div>
+                                <div class="info">
+                                    <label for="nome">Data do Emprestimo:</label>
+                                    <input placeholder="Data Emprestimo" class="input" name="text" type="date" th:fild="*(dataInicio)" required/>
+                                </div>
+                                <div class="div__bnts">
+                                    <button th:href="" class="bnt__voltar">Voltar</button>
+                                    <div class="pt-1 mb-4">
+                                        <button th:href="" class="bnt__cadastrar">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
