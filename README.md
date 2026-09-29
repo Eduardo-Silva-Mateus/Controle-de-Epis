@@ -33,6 +33,48 @@ The project allowed me to apply my knowledge of Java, Spring Boot, database pers
 
 Developed as a final course project for the Systems Development Technician program at SENAI.
 
+## Requirements
+
+To run this project locally, you need:
+
+- Java Development Kit (JDK) 17
+- MariaDB
+- Git
+
+## Database Configuration
+
+1. Install and start MariaDB.
+2. Create a database named `epis`.
+3. Configure your database credentials in `src/main/resources/application.properties`.
+
+Update the following properties with your local MariaDB username and password:
+
+```properties
+spring.datasource.url=jdbc:mariadb://localhost:3306/epis
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+```
+
+Do not commit real database passwords or credentials to the repository.
+
+## Running the Application
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Eduardo-Silva-Mateus/Controle-de-Epis.git
+```
+
+Open the project directory containing the Maven wrapper.
+
+On Windows, run:
+
+```powershell
+.mvnw.cmd spring-boot:run
+```
+
+The application will start using the local database configuration.
+
 ## Author
 
 **Eduardo Mateus da Silva**
