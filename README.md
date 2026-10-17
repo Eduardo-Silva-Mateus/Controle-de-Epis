@@ -1,83 +1,87 @@
-# Controle de EPIs
+# Sistema de Gestão de EPIs: organização dos dados de equipamentos de proteção individual
 
-A web application developed as my final course project at SENAI to manage Personal Protective Equipment (PPE).
+Aplicação web desenvolvida como projeto de conclusão do curso Técnico em Desenvolvimento de Sistemas do SENAI, com o objetivo de apoiar a organização e o gerenciamento de informações relacionadas a Equipamentos de Proteção Individual (EPIs).
 
-## About the Project
+## 🎯 Problema de negócio
 
-The system was developed to help manage employees, equipment, inventory, and PPE loans and returns.
+O gerenciamento de EPIs envolve informações que precisam ser organizadas e acessíveis para facilitar as rotinas operacionais. Quando esses registros não estão centralizados, o acompanhamento dos equipamentos pode se tornar mais trabalhoso.
 
-The project allowed me to apply my knowledge of Java, Spring Boot, database persistence, and web development.
+O **Controle de EPIs** propõe uma solução de software para apoiar esse processo por meio de uma aplicação web conectada a um banco de dados relacional.
 
-## Features
+## 🏢 Contexto de uso
 
-- Employee registration and management
-- User management
-- PPE and equipment type registration
-- Inventory management
-- Equipment loans and returns
-- Data persistence and validation
+O sistema foi desenvolvido pensando em um cenário de uso empresarial no qual é necessário organizar informações sobre equipamentos de proteção individual.
 
-## Technologies
+O projeto demonstra a aplicação de conceitos de desenvolvimento web, integração com banco de dados e persistência de informações.
 
-- Java 17
-- Spring Boot 3
-- Spring Web
-- Spring Data JPA
-- Hibernate
-- MariaDB
-- Thymeleaf
-- Maven
-- HTML, CSS, and Bootstrap
+> Projeto acadêmico desenvolvido para fins de aprendizado e demonstração de conhecimentos técnicos.
 
-## Academic Project
+## 🛠️ Stack tecnológica
 
-Developed as a final course project for the Systems Development Technician program at SENAI.
+- **Java** — linguagem de programação.
+- **Spring Boot** — framework para desenvolvimento da aplicação.
+- **Spring Data JPA / JPA** — persistência e acesso a dados.
+- **MariaDB** — banco de dados relacional.
+- **HTML5 e CSS3** — estrutura e estilos da interface.
+- **Bootstrap** — componentes e layout da interface web.
+- **Git e GitHub** — versionamento e hospedagem do código.
 
-## Requirements
+### Versões
 
-To run this project locally, you need:
+As versões exatas de Java, Spring Boot, MariaDB e das dependências devem ser consultadas na configuração do projeto antes da publicação desta documentação.
 
-- Java Development Kit (JDK) 17
-- MariaDB
-- Git
+## 📊 Resultados
 
-## Database Configuration
+O projeto resultou no desenvolvimento de uma aplicação web voltada ao gerenciamento de EPIs.
 
-1. Install and start MariaDB.
-2. Create a database named `epis`.
-3. Configure your database credentials in `src/main/resources/application.properties`.
+Não foram disponibilizadas métricas quantitativas verificáveis de redução de custos, tempo economizado ou aumento de produtividade. Por isso, esses resultados não são atribuídos ao projeto.
 
-Update the following properties with your local MariaDB username and password:
+## 🚀 Como executar
 
-```properties
-spring.datasource.url=jdbc:mariadb://localhost:3306/epis
-spring.datasource.username=YOUR_USERNAME
-spring.datasource.password=YOUR_PASSWORD
-```
+### Pré-requisitos
 
-Do not commit real database passwords or credentials to the repository.
+- JDK compatível com a versão configurada no projeto.
+- MariaDB instalado e em execução.
+- Git instalado.
 
-## Running the Application
+### Execução em 3 passos
 
-Clone the repository:
+**1. Clone o repositório**
 
 ```bash
 git clone https://github.com/Eduardo-Silva-Mateus/Controle-de-Epis.git
+cd Controle-de-Epis
 ```
 
-Open the project directory containing the Maven wrapper.
+**2. Configure o banco de dados**
 
-On Windows, run:
+Crie o banco de dados no MariaDB e configure as credenciais e a conexão nos arquivos de configuração da aplicação. Consulte o código para identificar o nome esperado do banco e os parâmetros necessários.
+
+Não publique senhas ou credenciais reais no repositório.
+
+**3. Execute a aplicação**
+
+Na pasta que contém o arquivo `pom.xml`, execute:
+
+```bash
+./mvnw spring-boot:run
+```
+
+No Windows, se o projeto incluir o Maven Wrapper, utilize:
 
 ```powershell
-.mvnw.cmd spring-boot:run
+.\mvnw.cmd spring-boot:run
 ```
 
-The application will start using the local database configuration.
+Se o Maven Wrapper não estiver disponível, será necessário utilizar uma instalação local do Maven. Após iniciar, consulte os logs da aplicação para confirmar a inicialização e identificar o endereço de acesso.
 
-## Author
+## 📚 Objetivo de aprendizado
+
+Este projeto faz parte da minha formação em Desenvolvimento de Sistemas e demonstra a aplicação prática de tecnologias Java, desenvolvimento web e persistência de dados.
+
+## 👨‍💻 Autor
 
 **Eduardo Mateus da Silva**
 
 - GitHub: [Eduardo-Silva-Mateus](https://github.com/Eduardo-Silva-Mateus)
-- LinkedIn: [Eduardo Mateus da Silva](https://www.linkedin.com/in/eduardomateussilva)
+- LinkedIn: [eduardo-mateus-silva](https://linkedin.com/in/eduardo-mateus-silva)
